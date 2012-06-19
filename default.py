@@ -24,6 +24,11 @@ class Screensaver(xbmcgui.WindowXMLDialog):
         print '2 Screensaver: onInit'
         self.monitor = self.ExitMonitor(self.exit)
 
+    def onAction(self, actionid):
+        # This is just for non-screensaver run mode, ex. Addon-Program
+        print '3 Action received: exiting'
+        self.close()
+
     def exit(self):
         print '4 Screensaver: Exit requested'
         self.close()
